@@ -30,3 +30,21 @@
 - Instrument recognition remained comparatively weaker when working with classical audio outputs
 - Audio quality and rhythm structure were reduced with Indian music
 - Even though the model partially recognised Indian instruments (like the flute), stylistic understanding remained weak, suggesting heavy pre-training on mainstream Western audio data
+
+## Experiment SET-C: 
+### Experimenting with the "do_sample" parameter
+-Prompt remained constant during this experiment: "Rhythmic upbeat Indian classical dhol with accompanying Indian instruments, creating a unique, joyful festive audio experience"
+| do_sample | Duration | Observation |
+|-----------|----------|-------------|
+| True | 5s |  |
+| True | 5s |  |
+| True | 5s |  |
+| False | 5s |  |
+
+#### Observations:
+##### do_sample=True: 
+##### do_sample=False: switches generation to "deterministic greedy decoding", which means that at each step, it chooses the most likely audio token rather than sampling from a probability distribution
+##### do_sample=True: enables sampling mode instead of greedy decoding during audio generation, introducing probabilistic variations in token selection and producing realistic, diverse, and dynamic outputs compared to repetitive or lifeless greedy outputs
+- Deterministic decoding ("do_sample=False") frequently resulted in total collapse and repetitive high frequency noises
+- On the other hand, probabilistic sampling ("do_sample=True") produced significantly more coherent and musically diverse outputs, fitting with the provided prompt, and generating high quality audio with good instrument recognition, rhythmic depth and correct tone capture
+
