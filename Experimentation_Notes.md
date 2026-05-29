@@ -1,7 +1,7 @@
 # Experiment log
 
 ## Experiment SET-A: 
-## Prompt Complexity and Generation Length(max_new_tokens)
+### Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
 | Simple prompt | Traditional Indian classical instrumental raga | 5s | Admirable audio quality in the 5s clip, with correct recognition of a classical raga, coupled with balanced sitar melody |
@@ -17,7 +17,7 @@
 - Detailed prompts lead to high quality outputs even when generating longer clips due to contextual clarity provided by environmental and tempo descriptions
 
 ## Experiment SET-B: 
-## Instrument-specific prompts, classified by genre
+### Instrument-specific prompts, classified by genre
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
 | Indian Instrument specific (Tabla) | Fast energetic tabla solo performance | 5s | Very weak instrument recognition, generated almost piano-like audio, no sign of Indian classical genre in the audio style |
