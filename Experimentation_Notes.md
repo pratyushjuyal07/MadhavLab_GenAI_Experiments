@@ -3,12 +3,12 @@
 ## Experiment SET-A: Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
-| Simple prompt | Traditional Indian classical instrumental raga | 5s and 10s | Decent audio quality in the 5s clip 
-But very weak audio in the 10s clip, with a high amount of noise and negligible instrument recognition and genre style |
-| Intermediate prompt | Traditional Indian classical sitar with tabla accompaniment | 5s and 10s | Rhythm improved, better beat style and enhanced instrument quality and recognition
-Although performance dipped in the 10s clip, with repetitive noise and unbalanced rhythm |
-| Detailed prompt | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | 5s and 10s | Greatly improved mood and style of audio generated, with better coherence and rhythm
-Performance of the 10s clip increased, with realistic audio and better mood and tone capture |
+| Simple prompt | Traditional Indian classical instrumental raga | 5s | Decent audio quality in the 5s clip |
+|               | Traditional Indian classical instrumental raga | 10s | Very weak audio in the 10s clip, with a high amount of noise and negligible instrument recognition and genre style |
+| Intermediate prompt | Traditional Indian classical sitar with tabla accompaniment | 5s | Rhythm improved, better beat style and enhanced instrument quality and recognition
+|                     | Traditional Indian classical sitar with tabla accompaniment | 10s | However, performance dipped in the 10s clip, with repetitive noise and unbalanced rhythm |
+| Detailed prompt | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | 5s | Greatly improved mood and style of audio generated, with better coherence and rhythm |
+|                      | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | 10s | Performance of the 10s clip increased, with realistic audio and better mood and tone capture |
 
 #### Observations:
 - More descriptive and contextual prompts lead to higher quality outputs
