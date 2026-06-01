@@ -56,27 +56,27 @@ Baseline control generations were conducted utilising the raw, unadapted `facebo
 
 | Prompt type | Prompt | Duration | Observation | Inference |
 | :--- | :--- | :--- | :--- | :--- |
-| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental, featuring intricate rhythmic patterns, fast-paced beats, and clear, resonant percussion. | 10s | Clear, noise-free output, but the rhythm follows Western electronic drum tracking. Total absence of authentic acoustic tabla timbres or traditional syllable patterns (bols). | The pre-trained latent space lacks specific representations for Indian percussion instruments, substituting them with generic rhythm sequences learned during training. |
-| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental, featuring a slow, expressive sitar melody beautifully accompanied by steady, rhythmic tabla beats. | 10s | Generation of a generic stringed timbre closely resembling an acoustic guitar or Middle Eastern oud. The arrangement lacks microtonal slides and structural raga progression. | Frozen model parameters default to standard Western harmonic structures and standard string scales when processing localised musical styles. |
-| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance, featuring a rich tapestry of veena, sitar, tabla, and other diverse string and percussion instruments, creating a vibrant rhythm and majestic melody. | 10s | Synthesises a structured multi-instrument composition, but the texture mimics a Western cinematic orchestral arrangement. Regional instrumentation cannot be isolated. | Text-to-audio decoding resolves polyphonic prompts by applying standard cinematic stereo layering, obscuring specific ethnic instrument properties. |
+| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental, featuring intricate rhythmic patterns, fast-paced beats, and clear, resonant percussion. | 10s | Good instrument recognition, but absence of authentic acoustic tabla patterns. | Pre-trained model lacks specific representations for Indian percussion instruments, substituting them with generic rhythm sequences learned during training. |
+| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental, featuring a slow, expressive sitar melody beautifully accompanied by steady, rhythmic tabla beats. | 10s | Generation of a generic stringed timbre closely resembling a sitar, with the arrangement lacking a defined structure and synchronicity. | Frozen model parameters default to standard harmonic structures when processing localised musical styles, instead of capturing intricacies. |
+| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance, featuring a rich tapestry of veena, sitar, tabla, and other diverse string and percussion instruments, creating a vibrant rhythm and majestic melody. | 10s | Synthesises a multi-instrument composition with sitar, tabla with a hint of veena, but the raga-styled performance is missing, with isolated instrument sounds. | Text-to-audio decoding resolves multi-instrument prompts by applying standard instrument layering, obscuring specific instrumental harmony and interplay. |
 
 ### Final Baseline Observations
-The pre-trained model provides exceptional structural stability and clean acoustics for generalised composition. However, a systemic bias toward Western acoustic frameworks severely limits its zero-shot capability to accurately reconstruct authentic Hindustani classical instrument timbres, rhythms, and styles.
+The pre-trained model provides exceptional audio stability and clean acoustics for generalised composition. However, a lack of understanding of traditional music is evident, with raga-styled structures not possible, limiting the base model's capability to accurately reconstruct authentic Hindustani classical instrumental interplay, rhythms, and styles.
 
 ---
 
 ## 6. Fine-Tuning Attempt 1: Failure Analysis
 
 ### Methodology
-The first fine-tuning attempt (Run Beta) applied aggressive optimisation parameters to achieve rapid style transfer. The setup utilised a high learning rate of 1e-4, an extended training duration of 5 epochs, and an elevated adapter scaling factor (`lora_alpha=32`, `r=16`).
+The first fine-tuning attempt applied aggressive optimisation parameters to achieve rapid style transfer. The setup utilised a high learning rate of 1e-4, an extended training duration of 5 epochs, and an elevated adapter scaling factor (`lora_alpha=32`, `r=16`).
 
 ### Attempt 1 Evaluation Table
 
-| Prompt type | Prompt | Duration | Observation | Inference |
-| :--- | :--- | :--- | :--- | :--- |
-| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental... | 10s | Severe acoustic degradation. The output consists of high-frequency squeaks, digital clicks, and continuous static noise with no rhythmic content. | The high learning rate caused severe divergence in the EnCodec multi-stream token matching, collapsing the sequencing layer. |
-| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental... | 10s | Heavily distorted audio dominated by low-frequency hums and digital artifacts. A faint, unmodulated drone is barely detectable under the high noise floor. | Excessive gradient updates warped the frozen attention projections, destroying the model's core audio synthesis capabilities. |
-| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance... | 10s | Total synthesis failure producing loud clipping artifacts, continuous digital feedback, and broken audio blocks. | The model suffered from an explosion of adapter weights and severe overfitting, forcing memorisation of raw waveform boundaries instead of style abstraction. |
+| Prompt type | Prompt | Duration | Observation |
+| :--- | :--- | :--- | :--- |
+| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental... | 10s | Severe acoustic degradation. The output consists of high-frequency squeaks, digital clicks, and continuous static noise with no rhythmic content. |
+| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental... | 10s | Heavily distorted audio dominated by low-frequency hums and digital artifacts.
+| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance... | 10s | Total synthesis failure producing loud clipping artifacts, continuous digital feedback, and broken audio blocks. |
 
 ### Final Attempt 1 Observations
 This run highlighted the high sensitivity of autoregressive audio decoders to aggressive parameter adjustments. Setting a learning rate too high or weighting the adapter too heavily overpowers the pre-trained foundation, corrupting the underlying text-to-audio translation matrix and inducing catastrophic generation collapse.
@@ -86,17 +86,20 @@ This run highlighted the high sensitivity of autoregressive audio decoders to ag
 ## 7. Fine-Tuning Attempt 2: Successful Style Adaptation
 
 ### Methodology
-The second training iteration (Run Gamma) introduced stabilised hyperparameters to safeguard foundational weights. The learning rate was reduced to a conservative 2e-5, the LoRA alpha-to-rank ratio was optimised to a balanced 1:1 state (`lora_alpha=16`, `r=16`), and total optimisation duration was constrained to 3 epochs to prevent local data memorisation.
+The second training iteration introduced stabilised hyperparameters to safeguard foundational weights. The learning rate was reduced to a conservative 2e-5, the LoRA alpha-to-rank ratio was optimised to a balanced 1:1 state (`lora_alpha=16`, `r=16`), and total optimisation duration was constrained to 3 epochs to prevent local data memorisation.
 
 ### Attempt 2 Evaluation Table
 
-| Prompt type | Prompt | Duration | Observation | Inference |
-| :--- | :--- | :--- | :--- | :--- |
-| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental... | 10s | Substantial improvement in instrument identification. The signature acoustic timbre and striking characteristics of a physical tabla are clearly recognisable, though a minor background hiss persists. | The optimised learning rate mapped the unique percussion profile into the decoder. The remaining hiss points to localised noise from the original MP3 source material or data scarcity bottlenecks. |
-| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental... | 10s | Highly effective reconstruction. The sitar demonstrates authentic bright, metallic resonance. Sitar and tabla outputs are synchronised, maintaining rhythmic cohesion and a defined melody line. | The balanced 1:1 scaling ratio allowed the adapter to overlay microtonal classical features cleanly onto the model's base generation path. |
-| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance... | 10s | Layered and majestic acoustic atmosphere. Displays successful separation between string plucks and percussion hits, though slight sonic congestion occurs during dense polyphonic sections. | Trainable matrices effectively encoded multi-instrument prompt constraints, but small model size limits flawless frequency separation during dense multi-instrument passages. |
+| Prompt type | Prompt | Duration | Observation |
+| :--- | :--- | :--- | :--- |
+| **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental, featuring intricate rhythmic patterns, fast-paced beats, and clear, resonant percussion. | 10s | Substantial improvement in instrument identification. The signature acoustic timbre and striking characteristics of a physical tabla are clearly recognisable, though a minor background hiss persists. |
+| **Melodic Duet** | A traditional Indian Hindustani classical raga-styled instrumental, featuring a slow, expressive sitar melody beautifully accompanied by steady, rhythmic tabla beats. | 10s | Great structure and audio quality, with the sitar demonstrating authentic resonance. Sitar and tabla outputs are synchronised, maintaining rhythmic cohesion and a defined melody line. |
+| **Grand Ensemble** | A grand Indian traditional raga-styled ensemble performance, featuring a rich tapestry of veena, sitar, tabla, and other diverse string and percussion instruments, creating a vibrant rhythm and majestic melody. | 10s | Layered and majestic acoustic atmosphere. Displays successful separation between string plucks and percussion hits, though slight noises occur randomly. |
 
 ### Final Attempt 2 Observations
-Hyperparameter recalibration produced successful, high-fidelity style transfer without breaking core audio synthesis. The adapter successfully integrated traditional Hindustani classical instrumentation, rhythmic synchronicity, and raga structural traits. Minor remaining constraints—including residual background noise on solo tracks and moderate congestion in ensemble passages—are directly related to:
+- Hyperparameter recalibration produced successful, high-fidelity style transfer without breaking core audio synthesis.
+- Trainable matrices effectively encoded multi-instrument prompt constraints, but small model size limits frequency separation during dense multi-instrument phases.
+- The adapter successfully integrated traditional Hindustani classical instrumentation, rhythmic synchronicity, and raga structural traits.
+- Minor remaining constraints—including residual background noise on solo tracks and moderate congestion in ensemble passages—are directly related to:
 1. **Dataset Volume Bottlenecks:** Training on a targeted 5-file dataset causes the model to inherit unique ambient and recording signatures present in the raw input files.
-2. **Decoder Capacity Restraints:** The 300M parameter model size exhibits fixed physical limits when tracking overlapping polyphonic frequencies, introducing minor synthetic textures under dense conditions.
+2. **Decoder Capacity Restraints:** The 300M parameter model size exhibits fixed physical limits when tracking overlapping instrumental frequencies, introducing minor synthetic textures under heavy conditions.
