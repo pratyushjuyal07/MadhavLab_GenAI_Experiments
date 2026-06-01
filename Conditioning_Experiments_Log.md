@@ -1,4 +1,4 @@
-# Experiment log
+# Conditioning Experiments with the `Base Model`
 
 ## At a glance
 - Greater prompt specificity was associated with noticeable improvements in audio quality, coherence, and instrument recognition.
