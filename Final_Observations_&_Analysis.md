@@ -25,7 +25,7 @@ The base model demonstrates strong audio generation stability and clear outputs 
 ---
 
 ## 3. Fine-Tuning Attempt 1: `Failure`
-
+The Outputs can be found at [Fine-Tuning Attempt 1](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Fine-Tuning%20Attempt%201/)
 ### Methodology
 Initial fine-tuning applied a high learning rate of `1e-4` and an aggressive adapter scaling factor (`lora_alpha=32`, `r=16`) over `5 training epochs`, utilising the 5-file chunked dataset.
 
@@ -43,7 +43,7 @@ This iteration highlighted the sensitivity of autoregressive audio decoders to a
 ---
 
 ## 4. Fine-Tuning Attempt 2: `Success`
-
+[Fine-Tuning Attempt 2](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Fine-Tuning%20Attempt%202/)
 ### Methodology
 The second fine-tuning iteration introduced stabilised hyperparameters to protect pre-trained weights. The learning rate was lowered to `2e-5`, the LoRA alpha-to-rank ratio was optimised to `1:1` (`lora_alpha=16`, `r=16`), and total training duration was capped at `3 epochs` to avoid overfitting.
 
