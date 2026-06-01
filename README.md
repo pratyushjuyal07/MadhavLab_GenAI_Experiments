@@ -66,7 +66,7 @@ The pre-trained model provides exceptional audio stability and clean acoustics f
 ---
 
 ## 6. Fine-Tuning Attempt 1: Failure Analysis
-
+Outputs can be found at [Fine-Tuning Attempt 1](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Fine-Tuning%20Attempt%201/)
 ### Methodology
 The first fine-tuning attempt applied aggressive optimisation parameters to achieve rapid style transfer. The setup utilised a high learning rate of 1e-4, an extended training duration of 5 epochs, and an elevated adapter scaling factor (`lora_alpha=32`, `r=16`).
 
@@ -89,7 +89,7 @@ This run highlighted the high sensitivity of autoregressive audio decoders to ag
 The second training iteration introduced stabilised hyperparameters to safeguard foundational weights. The learning rate was reduced to a conservative 2e-5, the LoRA alpha-to-rank ratio was optimised to a balanced 1:1 state (`lora_alpha=16`, `r=16`), and total optimisation duration was constrained to 3 epochs to prevent local data memorisation.
 
 ### Attempt 2 Evaluation Table
-
+Outputs can be found at [Fine-Tuning Attempt 2](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Fine-Tuning%20Attempt%202/)
 | Prompt type | Prompt | Duration | Observation |
 | :--- | :--- | :--- | :--- |
 | **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental, featuring intricate rhythmic patterns, fast-paced beats, and clear, resonant percussion. | 10s | Substantial improvement in instrument identification. The signature acoustic timbre and striking characteristics of a physical tabla are clearly recognisable, though a minor background hiss persists. |
