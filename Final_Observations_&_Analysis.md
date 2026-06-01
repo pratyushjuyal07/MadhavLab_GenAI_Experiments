@@ -1,7 +1,8 @@
 # Project Analysis: Final Fine-Tuning and Inferences
 
 ## 1. Conditioning Experiments (Base Model Tests)
-Objective evaluation of the base model was conducted before fine-tuning. This phase analysed the impact of prompt complexity, instrument specificity, and decoding parameters such as `do_sample`. The comprehensive data and specific test logs are available in the [Conditioning Experiments Log](./Conditioning_Experiments_Log.md).
+Objective evaluation of the base model was conducted before fine-tuning. This phase analysed the impact of prompt complexity, instrument specificity, and decoding parameters such as `do_sample`. 
+The comprehensive data and specific test logs are available in the [Conditioning Experiments Log](./Conditioning_Experiments_Log.md).
 
 ---
 
@@ -10,8 +11,8 @@ Objective evaluation of the base model was conducted before fine-tuning. This ph
 ### Methodology
 Generation of baseline control samples utilised the base `facebook/musicgen-small` pre-trained model. The evaluation targeted three distinct descriptive Hindustani classical prompts. Generation parameters were held constant at `guidance_scale=3.0` and `temperature=1.0` to generate `10-second` outputs (`500 tokens`) at a `32kHz sampling rate`.
 
-### Baseline Evaluation Table
-
+### Baseline Evaluation 
+Outputs can be found at [Baseline Outputs](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Baseline%20Outputs/)
 | Prompt type | Prompt | Duration | Observation | Inference |
 | :--- | :--- | :--- | :--- | :--- |
 | **Solo Percussion** | A highly detailed solo Indian classical Hindustani modern tabla instrumental, featuring intricate rhythmic patterns, fast-paced beats, and clear, resonant percussion. | `10s` | High-fidelity audio generation, but the rhythm adheres to Western electronic drum conventions. Complete absence of traditional acoustic tabla signatures or syllable structures (bols). | Base model lacks representation of specialised Indian percussion instruments, substituting them with mainstream acoustic or electronic variants present in the pre-training dataset. |
