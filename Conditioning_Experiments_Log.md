@@ -7,7 +7,7 @@
 - Deterministic decoding (`do_sample=False`) often led to generation collapse, producing repetitive high-frequency noise with limited musical content.
 In contrast, probabilistic sampling (`do_sample=True`) generated richer and more diverse audio, demonstrating improved rhythmic complexity, instrument fidelity, and musical coherence.
 - The findings suggest that both prompt engineering and sampling-based decoding play a critical role in achieving high-quality audio generation.
-- Outputs can be found at: [Outputs_Baseline](./Outputs (Experiments, Baseline, Fine-tuning)/experiments_set_A).
+- Outputs can be found at: [Outputs_Baseline]([Outputs_Baseline](./Outputs%20(Experiments,%20Baseline,%20Fine-tuning)/experiments_set_A/)).
 ---
 
 ## Experiment SET-A: 
