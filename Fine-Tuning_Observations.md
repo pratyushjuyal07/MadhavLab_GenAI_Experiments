@@ -8,7 +8,7 @@ Objective evaluation of the base model was conducted before fine-tuning. This ph
 ## 2. Baseline Audio Outputs
 
 ### Methodology
-Generation of baseline control samples utilised the base `facebook/musicgen-small` pre-trained model. The evaluation targeted three distinct descriptive Hindustani classical prompts. Generation parameters were held constant at `guidance_scale=3.0` and `temperature=1.0` to generate 10-second outputs (500 tokens) at a 32kHz sampling rate.
+Generation of baseline control samples utilised the base `facebook/musicgen-small` pre-trained model. The evaluation targeted three distinct descriptive Hindustani classical prompts. Generation parameters were held constant at `guidance_scale=3.0` and `temperature=1.0` to generate `10-second` outputs (`500 tokens`) at a `32kHz sampling rate`.
 
 ### Baseline Evaluation Table
 
