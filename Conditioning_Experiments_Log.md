@@ -19,7 +19,7 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 | Intermediate prompt | Traditional Indian classical sitar with tabla accompaniment | `5s` | Rhythm improved, better beat style and enhanced instrument quality and recognition with harmonious intermixing of sitar and tabla
 |                     | Traditional Indian classical sitar with tabla accompaniment | `10s` | However, performance dipped in the `10s` clip, with repetitive noise and unbalanced rhythm |
 | Detailed prompt | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | `5s` | Greatly improved mood and style of audio output, with better coherence and rhythm; audio mood and melody tone were exactly as prompted |
-|                      | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | `10s` | Performance of the 10s clip increased, with realistic audio and better mood and tone capture |
+|                      | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | `10s` | Performance of the `10s` clip increased, with realistic audio and better mood and tone capture |
 
 #### Observations:
 - More descriptive and contextual prompts lead to higher quality outputs
