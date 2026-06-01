@@ -7,10 +7,10 @@
 - Deterministic decoding (`do_sample=False`) often led to generation collapse, producing repetitive high-frequency noise with limited musical content.
 In contrast, probabilistic sampling (`do_sample=True`) generated richer and more diverse audio, demonstrating improved rhythmic complexity, instrument fidelity, and musical coherence.
 - The findings suggest that both prompt engineering and sampling-based decoding play a critical role in achieving high-quality audio generation.
-- Outputs can be found at: [Outputs_Baseline](Outputs%20(Experiments,%20Baseline,%20Fine-tuning)/experiments_set_A)
 ---
 
 ## Experiment SET-A: 
+- Outputs can be found at: [Outputs](Outputs%20(Experiments,%20Baseline,%20Fine-tuning)/experiments_set_A)
 ### Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
@@ -29,6 +29,7 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 ---
 
 ## Experiment SET-B: 
+- Outputs can be found at: [Outputs](Outputs%20(Experiments,%20Baseline,%20Fine-tuning)/experiments_set_B)
 ### Instrument-specific prompts, classified by genre
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
@@ -46,6 +47,7 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 ---
 
 ## Experiment SET-C: 
+- Outputs can be found at: [Outputs](Outputs%20(Experiments,%20Baseline,%20Fine-tuning)/experiments_set_C)
 ### Experimenting with the `do_sample` parameter
 - Prompt remained constant during this experiment: "Rhythmic upbeat Indian classical dhol with accompanying Indian instruments, creating a unique, joyful festive audio experience"
 ##### `do_sample=False`: switches generation to "deterministic greedy decoding", which means that at each step, it chooses the most likely audio token rather than sampling from a probability distribution
