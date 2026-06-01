@@ -48,7 +48,7 @@ The complete documentation of these configurations and comparative results is av
 ---
 
 ## 5. Baseline Audio Outputs
-
+Outputs can be found at [Baseline Outputs](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Baseline%20Outputs/)
 ### Methodology
 Baseline control generations were conducted utilising the raw, unadapted `facebook/musicgen-small` model. Text conditions consisted of three highly detailed prompts designed to capture specific Hindustani classical configurations. Generation parameters were strictly controlled at `guidance_scale=3.0` and `temperature=1.0` to yield 10-second outputs (500 tokens) at 32kHz.
 
