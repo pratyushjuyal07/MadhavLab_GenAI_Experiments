@@ -1,5 +1,15 @@
 # Experiment log
 
+## At a glance
+- Greater prompt specificity was associated with noticeable improvements in audio quality, coherence, and instrument recognition.
+- Longer audio generations (10s) were more prone to instability and noise when the prompt lacked sufficient descriptive guidance.
+- Performance varied across musical domains, with stronger results obtained for Western instruments and genres than for Indian classical music.
+- Deterministic decoding (do_sample=False) often led to generation collapse, producing repetitive high-frequency noise with limited musical content.
+In contrast, probabilistic sampling (do_sample=True) generated richer and more diverse audio, demonstrating improved rhythmic complexity, instrument fidelity, and musical coherence.
+- The findings suggest that both prompt engineering and sampling-based decoding play a critical role in achieving high-quality audio generation.
+
+---
+
 ## Experiment SET-A: 
 ### Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
@@ -16,6 +26,8 @@
 - Simpler prompts fail to do well when generating longer audio by causing long-term instability and noise
 - Detailed prompts lead to high quality outputs even when generating longer clips due to contextual clarity provided by environmental and tempo descriptions
 
+---
+
 ## Experiment SET-B: 
 ### Instrument-specific prompts, classified by genre
 | Prompt type | Prompt | Duration | Observation |
@@ -30,6 +42,8 @@
 - Instrument recognition remained comparatively weaker when working with classical audio outputs
 - Audio quality and rhythm structure were reduced with Indian music
 - Even though the model partially recognised Indian instruments (like the flute), stylistic understanding remained weak, suggesting heavy pre-training on mainstream Western audio data
+
+---
 
 ## Experiment SET-C: 
 ### Experimenting with the "do_sample" parameter
