@@ -12,7 +12,7 @@ I wanted to generate three specific types of music:
 
 ## 2. Dataset Selection and Preparation
 
-### Finding the Right Data was tougher than imagined
+### Finding the right Data was tougher than imagined
 - First checked standard machine-learning audio datasets like NSynth, but they did not include any Indian audio files.
 - The Saraga dataset was too big to download and handle on a small scale.
 - Nevertheless, pulled a few selective Carnatic music files from Saraga, but almost all of them had vocals, and I wanted purely instrumental audio for this Hindustani classical experiment.
@@ -23,21 +23,11 @@ To solve this, I went to Google's AudioSet research website to get clean, high-q
 - Found 5 excellent clips ranging from 2 to 10 minutes long. They feature different master composers like Pandit Ravi Shankar and Shubhendra Rao, covering traditional ragas (like Raga Rageshri and Raga Bageshri) with distinct instrumental combinations.
 
 ### The Sourced Audio Files
-* **audio1.mp3 (8 minutes)**
-  
-  A high-quality Sitar performance by Subendra Rao.
-* **audio2.mp3 (8 minutes)**
-  
-  A traditional raga performance featuring Veena, Sitar, and Tabla by Ravi Shankar.
-* **audio3.mp3 (10 minutes)**
-  
-  A pure Tabla solo focusing entirely on rhythm, beats, and speed.
-* **audio4.mp3 (8 minutes)**
-  
-  An instrumental track featuring Sitar and Tabla playing Raga Rageshri.
-* **audio5.mp3 (2 minutes)**
-  
-  A short, clean recording of Sitar and Tabla accompaniment.
+* **audio1.mp3 (8 minutes)** : A high-quality Sitar performance by Subendra Rao.
+* **audio2.mp3 (8 minutes)** : A traditional raga performance featuring Veena, Sitar, and Tabla by Ravi Shankar.
+* **audio3.mp3 (10 minutes)** : A pure Tabla solo focusing entirely on rhythm, beats, and speed.
+* **audio4.mp3 (8 minutes)** : An instrumental track featuring Sitar and Tabla playing Raga Rageshri.
+* **audio5.mp3 (2 minutes)** : A short, clean recording of Sitar and Tabla accompaniment.
 
 ### Processing the Pipeline
 - Used a script to resample the files to 32kHz (the exact rate MusicGen needs)
