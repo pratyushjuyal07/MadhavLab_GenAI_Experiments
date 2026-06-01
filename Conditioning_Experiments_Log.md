@@ -14,10 +14,10 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 ### Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
-| Simple prompt | Traditional Indian classical instrumental raga | `5s` | Admirable audio quality in the 5s clip, with correct recognition of a classical raga, coupled with balanced sitar melody |
-|               | Traditional Indian classical instrumental raga | `10s` | Very weak audio in the 10s clip, with a high amount of noise and negligible instrument recognition and genre style |
+| Simple prompt | Traditional Indian classical instrumental raga | `5s` | Admirable audio quality in the `5s` clip, with correct recognition of a classical raga, coupled with balanced sitar melody |
+|               | Traditional Indian classical instrumental raga | `10s` | Very weak audio in the `10s` clip, with a high amount of noise and negligible instrument recognition and genre style |
 | Intermediate prompt | Traditional Indian classical sitar with tabla accompaniment | `5s` | Rhythm improved, better beat style and enhanced instrument quality and recognition with harmonious intermixing of sitar and tabla
-|                     | Traditional Indian classical sitar with tabla accompaniment | `10s` | However, performance dipped in the 10s clip, with repetitive noise and unbalanced rhythm |
+|                     | Traditional Indian classical sitar with tabla accompaniment | `10s` | However, performance dipped in the `10s` clip, with repetitive noise and unbalanced rhythm |
 | Detailed prompt | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | `5s` | Greatly improved mood and style of audio output, with better coherence and rhythm; audio mood and melody tone were exactly as prompted |
 |                      | Slow and Meditative Indian Classical sitar performance, with light tabla beats enforcing a calm and meditative environment | `10s` | Performance of the 10s clip increased, with realistic audio and better mood and tone capture |
 
@@ -53,10 +53,10 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 
 | do_sample | Duration | Observation |
 |-----------|----------|-------------|
-| True | `5s` | Traditional dhol with sitar, good quality audio and instrument tone, with harmony and sync between the beats |
-| True | `5s` | Basic looped dhol sounds paired with tabla: great instrument recognition, however, faltering rhythmic consistency and synchronicity |
-| True | `5s` | Excellent instrument recognition, high quality audio, with complex patterns and rhythmic drops, with a dynamic and layered output structure |
-| False | `5s` | Constant shrill noise, no instruments, beats and rhythm |
+| `True` | `5s` | Traditional dhol with sitar, good quality audio and instrument tone, with harmony and sync between the beats |
+| `True` | `5s` | Basic looped dhol sounds paired with tabla: great instrument recognition, however, faltering rhythmic consistency and synchronicity |
+| `True` | `5s` | Excellent instrument recognition, high quality audio, with complex patterns and rhythmic drops, with a dynamic and layered output structure |
+| `False` | `5s` | Constant shrill noise, no instruments, beats and rhythm |
 
 #### Observations:
 - Deterministic decoding (`do_sample=False`) frequently resulted in total collapse and repetitive high frequency noises, with no music or rhythm and almost no instrument recognition
