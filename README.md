@@ -29,6 +29,7 @@ To isolate clean instrumental profiles, targeted audio tracking was conducted vi
 * **audio5.mp3 (2 mins):** Sitar and Tabla accompaniment loop.
 
 The processing pipeline resampled the raw inputs to 32kHz and sliced the continuous audio into uniform 30-second segments, generating 71 training chunks. Unique metadata descriptions were assigned to each chunk to map instrument configurations to individual token boundaries.
+
 <img width="1920" height="934" alt="Screenshot (235)" src="https://github.com/user-attachments/assets/84febddc-2666-4a1e-99ae-16d3bbf2eb81" />
 
 
@@ -53,6 +54,7 @@ The complete documentation of these configurations and comparative results is av
 Outputs can be found at [Baseline Outputs](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Baseline%20Outputs/)
 ### Methodology
 Baseline control generations were conducted utilising the raw, unadapted `facebook/musicgen-small` model. Text conditions consisted of three highly detailed prompts designed to capture specific Hindustani classical configurations. Generation parameters were strictly controlled at `guidance_scale=3.0` and `temperature=1.0` to yield 10-second outputs (500 tokens) at 32kHz.
+
 <img width="1920" height="925" alt="Screenshot (236)" src="https://github.com/user-attachments/assets/afbfcb2b-9f6e-4716-ab8d-cf757d1e75cd" />
 
 ### Baseline Evaluation Table
@@ -72,6 +74,7 @@ The pre-trained model provides exceptional audio stability and clean acoustics f
 Outputs can be found at [Fine-Tuning Attempt 1](./Outputs%20%28Experiments%2C%20Baseline%2C%20Fine-tuning%29/Fine-Tuning%20%26%20Related%20Outputs/Fine-Tuning%20Attempt%201/)
 ### Methodology
 The first fine-tuning attempt applied aggressive optimisation parameters to achieve rapid style transfer. The setup utilised a high learning rate of 1e-4, an extended training duration of 5 epochs, and an elevated adapter scaling factor (`lora_alpha=32`, `r=16`).
+
 
 <img width="1920" height="928" alt="Screenshot (238)" src="https://github.com/user-attachments/assets/76fb6e99-8f91-4fcc-bd0b-d35c3c08f827" />
 
@@ -93,6 +96,7 @@ This run highlighted the high sensitivity of autoregressive audio decoders to ag
 
 ### Methodology
 The second training iteration introduced stabilised hyperparameters to safeguard foundational weights. The learning rate was reduced to a conservative 2e-5, the LoRA alpha-to-rank ratio was optimised to a balanced 1:1 state (`lora_alpha=16`, `r=16`), and total optimisation duration was constrained to 3 epochs to prevent local data memorisation.
+
 
 <img width="1920" height="926" alt="Screenshot (240)" src="https://github.com/user-attachments/assets/84350552-45ef-4aa8-9540-8561a3ac6b6d" />
 
