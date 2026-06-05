@@ -14,7 +14,7 @@ In contrast, probabilistic sampling (`do_sample=True`) generated richer and more
 ### Prompt Complexity and Generation Length(max_new_tokens)
 | Prompt type | Prompt | Duration | Observation |
 |--------|----------|-------------|-------------|
-| Simple prompt | Traditional Indian classical instrumental raga | `5s` | Admirable audio quality in the `5s` clip, with correct recognition of a classical raga, coupled with balanced sitar melody |
+| Simple prompt | Traditional Indian classical instrumental raga | `5s` | Admirable audio quality in the `5s` clip, with correct recognition of style, coupled with balanced sitar melody |
 |               | Traditional Indian classical instrumental raga | `10s` | Very weak audio in the `10s` clip, with a high amount of noise and negligible instrument recognition and genre style |
 | Intermediate prompt | Traditional Indian classical sitar with tabla accompaniment | `5s` | Rhythm improved, better beat style and enhanced instrument quality and recognition with harmonious intermixing of sitar and tabla
 |                     | Traditional Indian classical sitar with tabla accompaniment | `10s` | However, performance dipped in the `10s` clip, with repetitive noise and unbalanced rhythm |
