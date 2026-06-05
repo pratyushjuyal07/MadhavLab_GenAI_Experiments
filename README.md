@@ -112,6 +112,6 @@ Outputs can be found at [Fine-Tuning Attempt 2](./Outputs%20%28Experiments%2C%20
 - Hyperparameter recalibration produced successful, high-fidelity style transfer without breaking core audio synthesis.
 - Trainable matrices effectively encoded multi-instrument prompt constraints, but small model size limits frequency separation during dense multi-instrument phases.
 - The adapter successfully integrated traditional Hindustani classical instrumentation, rhythmic synchronicity, and raga structural traits.
-- Minor remaining constraints—including residual background noise on solo tracks and moderate congestion in ensemble passages—are directly related to:
+- Minor remaining constraints, including residual background noise on solo tracks and moderate congestion in ensemble passages are directly related to:
 1. **Dataset Volume Bottlenecks:** Training on a targeted 5-file dataset causes the model to inherit unique ambient and recording signatures present in the raw input files.
 2. **Decoder Capacity Restraints:** The 300M parameter model size exhibits fixed physical limits when tracking overlapping instrumental frequencies, introducing minor synthetic textures under heavy conditions.
