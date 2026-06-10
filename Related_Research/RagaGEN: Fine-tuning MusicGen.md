@@ -1,4 +1,4 @@
-# Research Review: Fine-Tuning MusicGen for Indian Classical Music
+# Research Review:
 RagaGEN: Fine-Tuning MusicGen Transformer Models for the Generation of Indian Classical Raga Melodies  
 -D Sreekanth, S Gopi, F Ojo - 2025
 
