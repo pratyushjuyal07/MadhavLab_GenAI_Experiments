@@ -1,7 +1,6 @@
 # Research Review:
 [High fidelity neural audio compression
--A Défossez, J Copet, G Synnaeve, Y Adi]
-(https://arxiv.org/pdf/2210.13438)
+-A Défossez, J Copet, G Synnaeve, Y Adi](https://arxiv.org/pdf/2210.13438)
 
 ## Summary
 This work introduces EnCodec, a real-time, high-fidelity neural audio compression framework operating on a streaming encoder-decoder architecture with a discrete quantized latent space. The model is trained end-to-end using a combination of multiscale spectrogram adversaries to reduce acoustic artifacts and an automated loss balancer to stabilize multi-component gradient dynamics.
