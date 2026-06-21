@@ -5,7 +5,7 @@
 
 ## 1. Process Flow Diagram
 - Raw input is converted to dimensionality [T,1024], `T= time dimension` and `1024 = Hidden Dimensionality of MusicGen`
-`Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of size [T,1024]`
+- - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of size [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
 `Down-Projection Layer converts [T,1064] to [T,64] to compress the feature data while preserving time sequence length`
   
