@@ -7,10 +7,15 @@
   - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
   - `The _Down-Projection Layer_ converts [T,1024] to [T,64] to compress the feature data while preserving time sequence length`
-  - `A _Residual Bottleneck_ module captures localised info for all 64 channels through sliding windows, and changes feature vectors`
+  - `A _Residual Bottleneck_ module captures local info for all 64 channels through sliding windows, and changes feature vectors`
   - `The input feature vectors are added to these transformed feature vectors to preserve broader musical information`
   - `These transformed feature vectors are passed to a _Squeeze & Excitation_ block to overcome CNN's localised shortcomings`
-  - 
+  - `The _Squeeze_ block averages the global feature vectors for every channel, over all time, obtaining a vector of [1,64]`
+  - `The _Excitation_ block scales the original [T,64] vectors based on this average [1,64] factor, exciting weights globally`
+  - `The _Up-Projection Layer_ restores dimensionality by converting [T,64] vectors to [T,1024] to match transformer dimensions`
+- These new feature vectors extracted from the training audio are then added to MusicGen's original transformer matrices
+- Autoregressive Loss: by comparing the next ground-truth token to the next token predicted based on the updated model weights
+- Backpropagation: Parameters are adjusted using algorithms like AdamW, applying updates only to the adapter matrices
   
 
 ---
