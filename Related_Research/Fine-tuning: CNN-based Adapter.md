@@ -4,7 +4,7 @@
 -A Mehta, S Chauhan, M Choudhury - Proceedings of the 33rd ACM International Conference …, 2025](https://drive.google.com/file/d/1wqiPkZ_SlvHkL3-X0cOZku_4t9Ej5LvK/view?usp=sharing)
 
 ## 1. Process Flow Diagram
-- Raw input is converted to dimensionality [T,1024], `T= time dimension` and `1024 = Hidden Dimensionality of MusicGen`
+- Raw input is converted to dimensionality [T,1024], T= 'time dimension', and 1024 = 'Hidden Dimensionality of MusicGen'
   - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
   - `Down-Projection Layer converts [T,1064] to [T,64] to compress the feature data while preserving time sequence length`
