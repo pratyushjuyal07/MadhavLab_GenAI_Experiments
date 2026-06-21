@@ -3,7 +3,7 @@
 [Exploring Adapter Design Tradeoffs for Low-Resource Music Generation
 -A Mehta, S Chauhan, M Choudhury - Proceedings of the 33rd ACM International Conference …, 2025](https://drive.google.com/file/d/1wqiPkZ_SlvHkL3-X0cOZku_4t9Ej5LvK/view?usp=sharing)
 
-## 1. Process Flow
+## Process Flow
 - Raw input is converted to dimensionality [T,1024], T= 'time dimension', and 1024 = 'Hidden Dimensionality of MusicGen'
   - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
@@ -20,8 +20,6 @@
   
 
 ---
-
-## 2. Steps
 
 ### Step 1: Ingestion, Tokenisation, and Embedding
 The training process begins with raw audio clips chosen for fine-tuning. The audio is passed through Encodec and mapped through an embedding layer, which converts it into continuous feature vectors. This data structure has a specific layout: a Time Dimension (representing the total duration of the clip) and a Hidden Dimensionality of 1024 (which is the standard feature of the MusicGen Transformer).
