@@ -3,45 +3,9 @@
 [Exploring Adapter Design Tradeoffs for Low-Resource Music Generation
 -A Mehta, S Chauhan, M Choudhury - Proceedings of the 33rd ACM International Conference …, 2025](https://drive.google.com/file/d/1wqiPkZ_SlvHkL3-X0cOZku_4t9Ej5LvK/view?usp=sharing)
 
-## 1. High-Level Process Flow Diagram
+## 1. Process Flow Diagram
 
-The process moves sequentially from raw audio ingestion, down through the specialized parameter-efficient bottleneck, and back into the main transformer ecosystem for weight updates.
-
-```
-[Raw Ingestion Path]
-       │
-       ▼
-[1. Ingestion & Tokenization] ──────> Audio waveforms converted to multi-stream tokens via EnCodec
-       │
-       ▼
-[2. Embedding Layer] ───────────────> Tokens projected into dense feature vectors [T, 1024]
-       │
-       ├──────────────────────────────┐
-       ▼ (Frozen Backbone Path)       ▼ (Trainable Adapter Path)
-[MusicGen Transformer Layers]   [3. Down-Projection Layer]
-(Captures macro-melody & text)        │   • Convolutes [T, 1024] → [T, 64]
-       │                              │   • Preserves time sequence length (T)
-       │                              ▼
-       │                        [4. Deep Residual Bottleneck Module]
-       │                              │   • Slides over local windows
-       │                              │   • Captures short-term microtonal shifts
-       │                              ▼
-       │                        [5. Squeeze-and-Excitation (SE) Block]
-       │                              │   • Squeezes T away to get global summary
-       │                              │   • Excites/weights channels dynamically
-       │                              ▼
-       │                        [6. Up-Projection Layer]
-       │                                  • Restores dimensionality: [T, 64] → [T, 1024]
-       │                                  • Matches expected transformer dimensions
-       │                                  │
-       └─────────────────────────────( + ) <─── Element-wise Residual Addition
-                                      │
-                                      ▼
-                        [7. Autoregressive Loss & Backprop]
-                                  • Loss calculated against next ground-truth token
-                                  • Gradient updates applied ONLY to Adapter Weights
-```
-
+- `Input = Raw Training Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of size [T,1024]`
 ---
 
 ## 2. Elaborated Step-by-Step Technical Breakdown
