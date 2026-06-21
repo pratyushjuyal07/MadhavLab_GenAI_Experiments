@@ -14,11 +14,11 @@
 ### Pitch Generator
 
 #### Process Flow: Pitch Sequence Processing & Autoregressive Generation
-- `Vocal Tracking Resolution` => `Sample raw audio pitch at 100Hz (every 10ms)` => `Captures ultra-rapid microtonal fluctuations and ornaments`
-- `Microtonal Quantization` => `Segment vocal range (86Hz to 899Hz) into fine 10-cent bins` => `Creates a discrete vocabulary V, preventing snapping to rigid Western piano notes`
-- `Token Vectorization` => `Map discrete pitch token index through Embedding Matrix $E \in \mathbb{R}^{|V| \times d}$` => `Projects symbolic steps into a continuous high-dimensional latent space`
-- `Autoregressive Processing` => `Feed token sequences sequentially into a causal Decoder-Only Transformer` => `Calculates contextual dependencies to predict the next logical pitch step`
-- `Optimization Loop` => `Evaluate predicted token distributions using Cross-Entropy Loss` => `Penalizes deviations from real human performances to refine network parameters $\theta$`
+- `Raw Audio Input` => `100Hz Pitch Tracker` => `Continuous Frequencies (86Hz - 899Hz)`
+- `Continuous Frequencies` => `10-Cent Quantizer` => `Discrete Pitch Tokens (Vocabulary V)`
+- `Discrete Pitch Tokens` => `Embedding Matrix E` => `Latent Feature Vectors [Time, d]`
+- `Latent Feature Vectors` => `Decoder-Only Transformer` => `Predicted Token Logits`
+- `Predicted Token Logits vs Ground Truth` => `Cross-Entropy Loss` => `Weight Adjustments ($\theta$)`
 
 ---
 
