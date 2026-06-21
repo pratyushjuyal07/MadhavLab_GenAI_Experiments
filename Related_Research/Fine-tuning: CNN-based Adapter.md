@@ -8,6 +8,7 @@
   - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
   - `Down-Projection Layer converts [T,1064] to [T,64] to compress the feature data while preserving time sequence length`
+  - `A residual bottleneck module captures localised info for all 64 channels through sliding windows, and changes feature vectors`
   
 
 ---
