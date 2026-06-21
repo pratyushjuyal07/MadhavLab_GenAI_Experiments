@@ -3,12 +3,14 @@
 [Exploring Adapter Design Tradeoffs for Low-Resource Music Generation
 -A Mehta, S Chauhan, M Choudhury - Proceedings of the 33rd ACM International Conference …, 2025](https://drive.google.com/file/d/1wqiPkZ_SlvHkL3-X0cOZku_4t9Ej5LvK/view?usp=sharing)
 
-## 1. Process Flow Diagram
+## 1. Process Flow
 - Raw input is converted to dimensionality [T,1024], T= 'time dimension', and 1024 = 'Hidden Dimensionality of MusicGen'
   - `Input = Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of [T,1024]`
 - These feature vectors are passed through the CNN-based framework:
   - `Down-Projection Layer converts [T,1064] to [T,64] to compress the feature data while preserving time sequence length`
   - `A residual bottleneck module captures localised info for all 64 channels through sliding windows, and changes feature vectors`
+  - `The input feature vectors are added to these transformed feature vectors to preserve broader musical information`
+  - `These transformed feature vectors are passed to a Squeeze&Excitation block which aims to overcome CNN's localised shortcomings`
   
 
 ---
