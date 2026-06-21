@@ -1,7 +1,7 @@
 # Analysing GaMaDHaNi: Hierarchical Generative Modeling for Hindustani Classical Vocal Contours
 
 [Hierarchical Generative Modeling of Melodic Vocal Contours in Hindustani Classical Music
-- N Shikarpur, K M Dendukuri, Y Wu, A Caillon, C Z A Huang - Proceedings of the 25th International Society for Music Information Retrieval Conference, 2024](https://arxiv.org/abs/2408.12658)
+-N Shikarpur, K M Dendukuri, Y Wu, A Caillon, C Z A Huang - Proceedings of the 25th Int. Society for Music Information Retrieval Conf., 2024](https://arxiv.org/abs/2408.12658)
 
 ## Objective of the Model
 - Traditional discrete notations and symbolic representations fail to faithfully capture the smooth, fluid nuances of vocal execution
