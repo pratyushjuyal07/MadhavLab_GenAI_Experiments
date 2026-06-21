@@ -5,7 +5,7 @@
 
 ## 1. Process Flow Diagram
 
-- `Input = Raw Training Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of size [T,1024]`
+`Input = Raw Training Audio for fine-tuning` => `Converted to audio tokens through EnCodec` => `Converted into feature vectors of size [T,1024]`
 ---
 
 ## 2. Elaborated Step-by-Step Technical Breakdown
