@@ -1,4 +1,4 @@
-# Analysing CNN-based Adapter attempts in fine-tuning MusicGen
+# Analysing CNN-based Adapters in fine-tuning attempts of MusicGen
 
 [Exploring Adapter Design Tradeoffs for Low-Resource Music Generation
 -A Mehta, S Chauhan, M Choudhury - Proceedings of the 33rd ACM International Conference …, 2025](https://drive.google.com/file/d/1wqiPkZ_SlvHkL3-X0cOZku_4t9Ej5LvK/view?usp=sharing)
