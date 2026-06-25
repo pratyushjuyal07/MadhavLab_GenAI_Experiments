@@ -18,7 +18,7 @@
 - `Continuous Frequencies` => `10-Cent Quantizer` => `Discrete Pitch Tokens (Vocabulary V)`
 - `Discrete Pitch Tokens` => `Embedding Matrix E` => `Latent Feature Vectors [Time, d]`
 - `Latent Feature Vectors` => `Decoder-Only Transformer` => `Predicted Token Logits`
-- `Predicted Token Logits vs Ground Truth` => `Cross-Entropy Loss` => `Weight Adjustments ($\theta$)`
+- `Predicted Token Logits vs Ground Truth` => `Cross-Entropy Loss` => `Weight Adjustments`
 
 ---
 
