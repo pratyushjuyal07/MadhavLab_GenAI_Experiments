@@ -46,7 +46,7 @@ Training high-dimensional audio token matrices on a single 15GB VRAM GPU contain
 ## 4. Conditioning Experiments (Base Model Tests)
 Before model alteration, objective benchmarks were run on the unadapted base architecture to analyse the interplay between prompt phrasing, length variables, instrument definitions, and sampling choices. 
 
-The complete documentation of these configurations and comparative results is available in the [Conditioning Experiments Log](./Conditioning_Experiments_Log.md).
+The complete documentation of these configurations and comparative results is available in the [Conditioning Experiments Log]((https://github.com/pratyushjuyal07/MadhavLab_GenAI_Experiments/blob/main/Conditioning_Experiments_Log.md)).
 
 ---
 
