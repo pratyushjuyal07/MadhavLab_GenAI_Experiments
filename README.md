@@ -1,4 +1,4 @@
-# Fine-Tuning MusicGen for Hindustani Classical Instrumental Style Adaptation
+# Parameter Efficient Domain Adaptation of Generative Audio Transformers: `MusicGen`
 
 ## 1. Objective
 The primary goal of this project was to evaluate parameter-efficient style adaptation on MusicGen, an autoregressive transformer-based decoder designed for text-to-audio generation. The target domain focused on conditioning the model to synthesise authentic traditional Hindustani classical instrumental music across three distinct structural archetypes:
