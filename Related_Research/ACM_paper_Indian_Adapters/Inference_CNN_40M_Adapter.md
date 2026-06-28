@@ -46,6 +46,6 @@
 - Prompt 3: "An expressive instrumental composition inspired by Raga Bhairavi, featuring traditional Indian classical melodic phrases, graceful ornamentation (meend, gamak), emotive improvisation, rich tanpura drone, and delicate tabla accompaniment, creating a serene and deeply spiritual atmosphere."
 - Length: 10s
 
-
+<img width="993" height="374" alt="image" src="https://github.com/user-attachments/assets/8fd6b21c-3918-43a8-ab33-6a1802cebb04" />
 
 ---
