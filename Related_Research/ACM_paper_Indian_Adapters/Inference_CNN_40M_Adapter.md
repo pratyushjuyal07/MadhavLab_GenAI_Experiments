@@ -32,14 +32,14 @@
 - Prompt 1: "An instrumental piece featuring traditional Indian Raga inflections, detailed sitar and tabla ornamentations"
 - Length: 10s
 
-
+<img width="993" height="374" alt="image" src="https://github.com/user-attachments/assets/90142894-bb6d-4f75-b2cf-5b371764f842" />
 
 ---
 
 - Prompt 2: "An expressive instrumental composition inspired by Raga Bhairavi, featuring traditional Indian classical melody and instruments"
 - Length= 10s
 
-
+<img width="993" height="374" alt="image" src="https://github.com/user-attachments/assets/2931004e-e3bf-46fb-9df1-a84478eb107e" />
 
 ---
 
