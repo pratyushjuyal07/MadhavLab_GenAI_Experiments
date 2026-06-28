@@ -2,7 +2,7 @@
 
 - Adapter's .pt files with model weights can be found [here](https://huggingface.co/0hawkeye33/Adapters/tree/main/ISMIR)
 - Experimental Colab codebooks can be found [here for 40M_CNN](https://colab.research.google.com/drive/1HgAW1J6r96pYSWZsxY-J6iVMWKZ4y0nO#scrollTo=LRYrNY3F85AK) and [here for 40M_Transformer](https://colab.research.google.com/drive/1uKxITVzocdymNQGNxiSJdCca-yKN_fue#scrollTo=0Qz0E2hl8GWs)
-- Inference outputs can be found [here](link)
+- Inference outputs can be found [here](https://github.com/pratyushjuyal07/MadhavLab_GenAI_Experiments/tree/c9d79909d1de0184b09190796726b8fe48f3ff6f/Related_Research/ACM_paper_Indian_Adapters/Outputs_40M)
 
 ## 40M CNN Adapter
 
