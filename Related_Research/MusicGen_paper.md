@@ -12,21 +12,25 @@ J Copet, F Kreuk, I Gat, T Remez, D Kant, G Synnaeve… - Advances in neural inf
   - Codebook patterns => a partition Ps belonging to ($\Omega$), for s=1,2,...S
   
 - Pattern flattening: sorted by (time,codebook); joint distribution; O(S^2), S=TxK
+  
   <img width="768" height="172" alt="image" src="https://github.com/user-attachments/assets/5c010d4c-f2e8-458b-912b-5713100844bd" />
   <img width="602" height="273" alt="image" src="https://github.com/user-attachments/assets/e6b8e06b-b971-4ad8-a399-a70b1170c212" />
 
 
 - Parallel pattern: concurrent prediction for K codebooks
+  
   <img width="742" height="181" alt="image" src="https://github.com/user-attachments/assets/a128dd36-a59b-4bfd-9e2f-15c380496734" />
   <img width="482" height="279" alt="image" src="https://github.com/user-attachments/assets/ff42c6ce-ac21-430a-b366-2ffb1e1fef3a" />
 
 
 - Computational Limitation: for efficiency, codebooks at t are assumed to be conditionally independent of codebooks of <t
+  
   <img width="768" height="129" alt="image" src="https://github.com/user-attachments/assets/c7e891bd-a3ba-4565-a0d6-0b22d42e338b" />
 
 - Which violates RVQ! kth codebook depends on 1,2...k-1
 
 - Solution: Delay interleaving
+
   <img width="491" height="269" alt="image" src="https://github.com/user-attachments/assets/ffaf087a-7f49-4acd-8893-c8d4b4ddb465" />
 
 --- 
