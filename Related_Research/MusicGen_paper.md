@@ -33,5 +33,8 @@ J Copet, F Kreuk, I Gat, T Remez, D Kant, G Synnaeve… - Advances in neural inf
 
 ## Inference: text to music
 
-`Text` => (using a pre-trained text encoder, eg T5) => Conditioning Tensor `C` of size (Tc x Dc) => (using linear projection) => `C^(transformed)`   to size (Tc x D) => (now matches hidden dimension) => injected into every Transformer layer of MusicGen => (using cross-attention module) => Autoregressive Loop over Pattern Steps s (from 1 to S = T + K - 1) => Multi-stream Input Codebook Tokens => Cross-Attention over C^(transformed) => Feed-Forward Network ] => Final Block Output Layer => Classifier-Free Guidance (CFG) interpolation => (using Temperature + Top-p Nucleus Sampling) => Categorical index selection for next-step multi-stream tokens => CFG (using Temperature and top-p sampling) => Final audio token matrix of size (TxK) => RRVQ and upsampling to 1D waveform at 32kHz => (using EnCodec)
+- `Text` => (using a pre-trained text encoder, eg T5) => Conditioning Tensor `C` of size (Tc x Dc) => (using linear projection) => `C^(transformed)`   
+- `C^(transformed)`=> to size (Tc x D) => (now matches hidden dimension) => injected into every Transformer layer of MusicGen => (using cross-attention module)
+- Autoregressive Loop over Pattern Steps s (from 1 to S = T + K - 1) => Multi-stream Input Codebook Tokens => Cross-Attention over C^(transformed) => Feed-Forward Network ] => Final Block Output Layer => Classifier-Free Guidance (CFG) interpolation => (using Temperature + Top-p Nucleus Sampling) => Categorical index selection for next-step multi-stream tokens
+- Final audio token matrix of size (TxK) => RRVQ and upsampling to 1D waveform at 32kHz => (using EnCodec)
 
