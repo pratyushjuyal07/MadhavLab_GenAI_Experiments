@@ -1,5 +1,7 @@
 Tasks assigned:
 
+## Meet 1
+
 `Implementation` based:
 - Get access to the Zenodo Raga ID dataset
   - [done](https://zenodo.org/records/7278511?token=eyJhbGciOiJIUzUxMiIsImlhdCI6MTc4MjM4OTk1NywiZXhwIjoxNzg0OTM3NTk5fQ.eyJpZCI6IjkwZTcyZmI5LTU1ZmItNDY0NS1iNDFhLTJhZjMyMmExMWEzYyIsImRhdGEiOnt9LCJyYW5kb20iOiJjOWQyYWY1YjkyOWUzZjRhMTAyZWQzMjc0NDM1NjIwNiJ9.cLaZwc-_YSzwDXiaIinOgWGcqs_zqWI6pLPCMucfBZioghc0msuEIBquJ4KEk5fl0PZDLWwA8nnZkLX0vh6ziw&preview_file=Indian+Art+Music+Raga+Recognition+Dataset+%28audio%29.zip)
@@ -11,3 +13,11 @@ Tasks assigned:
 `Reading` based:
 - Read the papers that have cited the ACM paper
 - Read the working of the pitch and spectrogram generator of the GaMaDHaNi paper
+
+## Meet 2
+
+- T5, Tc relation with prompt
+- Conditioning transformer on every layer
+- cross-attention
+- understand all losses in musicgen fine tuning
+- fine tuning on panns  model, sitar dataset
