@@ -9,4 +9,4 @@ J Copet, F Kreuk, I Gat, T Remez, D Kant, G Synnaeve… - Advances in neural inf
   - audio => discrete matrix Q of size {1,2,3... M}^(T x K), T=50
 - Objective: modelling joint probability distribution P(Q) over parallel streams
   - Q => 2D grid defined by (t,k) | t from 1,T ; k from 1,K
-- Codebook patterns (&#937) 
+- Codebook patterns $\Omega$
