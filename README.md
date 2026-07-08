@@ -33,10 +33,15 @@ The complete documentation of these configurations and comparative results is av
 
 The main goal of this experiment was to test how to fine-tune MusicGen (Facebook's AI music model) without needing massive computing power. Specifically, I wanted to fine-tune the `facebook/musicgen-small` model on realistic, high-quality traditional Hindustani classical instrumental music. 
 
-The complete documentation of this attempt, including the dataset, processing, approach, methodology, roadblocks and results is available in the [Fine-Tuning_LORA folder](Fine-Tuning_LORA/README_Fine-Tuning.md).
+The complete documentation of this attempt, including the dataset, processing, approach, methodology, roadblocks and results, is available in the [Fine-Tuning_LORA folder](Fine-Tuning_LORA/README_Fine-Tuning.md).
 
 ---
 
 ## 6. Implementing Related Research
 
-`ongoing`
+- [Another Fine-tuning attempt using PANNs 'ongoing']
+- [Research and experimentation of multi-adapter fine-tuning and conditioning experiments, ACM paper](https://github.com/pratyushjuyal07/MadhavLab_GenAI_Experiments/tree/main/Related_Research/ACM_paper_Indian_Adapters)
+- [Research and exploration of hierarchical modeling, GaMaDHaNi paper](https://github.com/pratyushjuyal07/MadhavLab_GenAI_Experiments/tree/main/Related_Research/GaMaDHaNi_paper_Hierarchical_Modeling)
+- [Other core papers](https://github.com/pratyushjuyal07/MadhavLab_GenAI_Experiments/tree/main/Related_Research)
+
+`ongoing` 
