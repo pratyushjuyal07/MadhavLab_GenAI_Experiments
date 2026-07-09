@@ -20,3 +20,9 @@ Tasks assigned:
 - Conditioning transformer on every layer
 - cross-attention
 - fine tuning on panns  model, sitar dataset
+
+## Meet 3
+
+- AI-enabled text-to-music generation: a comprehensive review
+- LoRA paper
+- Fine-tuning through LoRA
