@@ -19,5 +19,4 @@ Tasks assigned:
 - T5, Tc relation with prompt
 - Conditioning transformer on every layer
 - cross-attention
-- understand all losses in musicgen fine tuning
 - fine tuning on panns  model, sitar dataset
